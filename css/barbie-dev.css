@@ -1,42 +1,21 @@
-#celebres1{
-    margin-left: 100px;
-    margin-top:20px;
-}
-#celebres2{
-    margin-left: 650px;
-    margin-top:-455px;
-}
-#celebres3{
-    margin-left: 1200px;
-    margin-top:-528px;
-}
-
- #celebres4{
-    margin-left: 100px;
-    margin-top: 90px;
-   
- }
 
 
-#celebres5{
-    margin-left: 650px;
-    margin-top: -190px;
-   
-} 
-
-#celebres6{
-    margin-left: 1200px;
-     margin-top: -480px; 
+#logo{
+    width:350px; 
+    height: 65px;
+    transition: 1s all;
     
-} 
-
-/* #container{
-
-    margin-top: 22px;
-    align-items: stretch;
-    flex-grow: ;
-    display:flex; 
-    align-content: space-between;
 }
-  */
+#logo:hover{
+    transform: scale(1.2);
+}
 
+#container{
+    display: flex;
+	align-items: center;
+	flex-direction: row;
+	flex-flow:  wrap;
+	justify-content: space-around;
+	margin: 2%;
+	
+}
