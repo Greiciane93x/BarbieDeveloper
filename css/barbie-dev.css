@@ -30,3 +30,27 @@ footer{
     box-sizing: border-box;
     
 }
+
+
+
+#title{
+    margin-left:40%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+
+}
+#poster{
+    margin-left:40%;
+    margin-top: 22px;
+    margin-bottom: 22px;
+   
+ 
+
+}
+#descricao{
+    margin-left:41%; 
+    width: 315px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+
+}
