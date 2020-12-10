@@ -1,11 +1,12 @@
 class modelDocumentario{
     constructor(title){
-       
+        
+  
         this._title = title; 
         this._plot = ""; 
         this._poster = ""; 
-      
-        
+
+     
     }
 
        
@@ -13,17 +14,17 @@ class modelDocumentario{
     buscaFilme(){  
       
       let title = this._title; 
-      let tituloFinal = title.split(" ").join("+"); 
-
       
+      title = title.split(" ").join("+")
+     
       
         let requisicao  = new XMLHttpRequest();
-        requisicao.open('GET',` http://www.omdbapi.com/?t=${tituloFinal}&apikey=c1ee88b2`, false);
+        requisicao.open('GET',` http://www.omdbapi.com/?t=${title}&apikey=c1ee88b2`, false);
         requisicao.addEventListener('load',()=>
         {
             if (requisicao.status == 200 && requisicao.readyState == 4)
             {
-                let dados = JSON.parse(requisicao.responseText)
+                let dados =this._processaResponse(requisicao.responseText)
                 this._att(dados)
               
             }
@@ -35,8 +36,15 @@ class modelDocumentario{
 
     }
    
+    _processaResponse(responseString){
+        let response = JSON.parse(responseString); 
+        return response; 
+    }
+    
 
     _att(dados){
+
+     
         this._title = dados.Title; 
         this._plot = dados.Plot; 
         this._poster = dados.Poster; 
@@ -44,7 +52,7 @@ class modelDocumentario{
     }
 
     getTitle(){
-            return this._title; 
+            return this._title;
        
     }
     getPlot(){
@@ -94,7 +102,6 @@ class UserView{
 class Controller{
     adicionaFilme(){
 
-      
         let dados = new modelDocumentario(title.value)
         dados.buscaFilme(); 
         let view = new UserView(); 
@@ -109,5 +116,3 @@ let controller = new Controller();
 document.getElementById("buscar").addEventListener("click", controller.adicionaFilme)
 
 var title = document.querySelector("#search")
-
-
