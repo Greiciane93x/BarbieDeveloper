@@ -21,7 +21,7 @@ class modelDocumentario{
      
       
         let requisicao  = new XMLHttpRequest();
-        requisicao.open('GET',` http://www.omdbapi.com/?t=${title}&apikey=c1ee88b2`, false);
+        requisicao.open('GET',` https://www.omdbapi.com/?t=${title}&apikey=c1ee88b2`, false);
         requisicao.addEventListener('load',()=>
         {
             if (requisicao.status == 200 && requisicao.readyState == 4)
