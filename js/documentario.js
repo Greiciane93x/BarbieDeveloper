@@ -1,6 +1,8 @@
 class modelDocumentario{
     constructor(title){
         
+
+        
         this._title = title; 
 
         
@@ -127,6 +129,9 @@ class Controller{
         let view = new UserView(); 
         view.render(dados); 
     }
+    limpaCampos(){
+        document.getElementById('search').value = '';
+    }
     
 
 }
@@ -134,5 +139,5 @@ class Controller{
 let controller = new Controller();
 
 document.getElementById("buscar").addEventListener("click", controller.adicionaFilme)
-
+document.getElementById("buscar").addEventListener("click", controller.limpaCampos )
 var title = document.querySelector("#search")
