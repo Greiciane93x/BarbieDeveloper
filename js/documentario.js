@@ -1,12 +1,11 @@
 class modelDocumentario{
     constructor(title){
         
-  
         this._title = title; 
+
+        
         this._plot = ""; 
         this._poster = ""; 
-
-     
     }
 
        
@@ -16,6 +15,7 @@ class modelDocumentario{
       let title = this._title; 
       
       title = title.split(" ").join("+")
+      
      
       
         let requisicao  = new XMLHttpRequest();
@@ -52,18 +52,38 @@ class modelDocumentario{
     }
 
     getTitle(){
-            return this._title;
+            if(this._title === undefined){
+                return 'Você precisa inserir um documentário válido!'; 
+            }else{
+                return this._title;
+            }
+           
        
     }
     getPlot(){
-        if(this._plot == 'N/A'){
+        if(this._plot === undefined){
+            
             return ''; 
-        }else{  
-            return this._plot; 
+        }else{
+            if(this._plot === 'N/A'){
+                return ''; 
+            }else{  
+                return this._plot; 
+            }
         }
+
     }
     getPoster(){
-        return this._poster; 
+        if(this._poster === undefined){
+            return ''; 
+        }else{
+            if(this._poster === 'N/A'){
+                return ''; 
+            }else{  
+                return this._poster; 
+            }
+        }
+       
     }
    
 }

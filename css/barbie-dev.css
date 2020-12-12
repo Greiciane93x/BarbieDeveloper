@@ -1,5 +1,4 @@
 
-
 #logo{
     width:350px; 
     height: 65px;
@@ -43,7 +42,7 @@ footer{
     margin-left:40%;
     margin-top: 22px;
     margin-bottom: 22px;
-   
+
  
 
 }
@@ -53,4 +52,7 @@ footer{
     font-family: 'Courier New', Courier, monospace;
     font-weight: 900;
 
+}
+input{
+    width: 250px!important;
 }
