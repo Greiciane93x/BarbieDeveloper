@@ -1,143 +1,61 @@
-class modelDocumentario{
-    constructor(title){
-        
+let botao = document.getElementById('buscar'); 
+botao.addEventListener('click', getFilmes)
 
-        
-        this._title = title; 
+    async function getFilmes() {
 
-        
-        this._plot = ""; 
-        this._poster = ""; 
-    }
-
-       
-
-    buscaFilme(){  
       
-      let title = this._title; 
-      
-      title = title.split(" ").join("+")
-      
+
+         titulo = document.getElementById('search').value
+
+        const url = `https://www.omdbapi.com/?s=${titulo}&apikey=c1ee88b2`; 
      
-      
-        let requisicao  = new XMLHttpRequest();
-        requisicao.open('GET',` https://www.omdbapi.com/?t=${title}&apikey=c1ee88b2`, false);
-        requisicao.addEventListener('load',()=>
-        {
-            if (requisicao.status == 200 && requisicao.readyState == 4)
-            {
-                let dados =this._processaResponse(requisicao.responseText)
-                this._att(dados)
+        let resposta = await fetch(url)
+            .then(res =>{
+                let req = res.json()
+                return req
+            })
+
+           
+        if(resposta.Response === 'False'){
+            let results = document.getElementById('results')
+            let resultados = `
+                <h5 id="nao-encontrado"> Nenhum título com "${titulo}" foi encontrado. Por favor, tente novamente. </h5>
+            `
+            results.innerHTML = resultados 
+
+        }else if(resposta.Response === 'True'){
+            let container = document.getElementById('container'); 
+
+             let filmes = resposta.Search 
+
+
+            for(f of filmes){
+          
+                let containerDeFilmes = document.createElement('div')
+                containerDeFilmes.className = 'filmes-container'
+                container.appendChild(containerDeFilmes)
+                
+                let poster = `<div class="poster">
+                <img src="${f.Poster}">
+                </div>`
+                containerDeFilmes.innerHTML += poster
+
+                
+                let InformacoesDiv = document.createElement('div')
+                InformacoesDiv.className = 'informacoes'
+                containerDeFilmes.appendChild(InformacoesDiv)
+
+                let titulo = `<h4 class="titulo">${f.Title}</h4>`
+                InformacoesDiv.innerHTML += titulo
+
+        
+                let anoFilme = `<small>${f.Year}<small>`
+                InformacoesDiv.innerHTML += anoFilme
+
               
             }
-        });
-        
-       
-
-        requisicao.send();
-
-    }
-   
-    _processaResponse(responseString){
-        let response = JSON.parse(responseString); 
-        return response; 
-    }
-    
-
-    _att(dados){
-
-     
-        this._title = dados.Title; 
-        this._plot = dados.Plot; 
-        this._poster = dados.Poster; 
-        
-    }
-
-    getTitle(){
-            if(this._title === undefined){
-                return 'Você precisa inserir um documentário válido!'; 
-            }else{
-                return this._title;
-            }
-           
-       
-    }
-    getPlot(){
-        if(this._plot === undefined){
-            
-            return ''; 
-        }else{
-            if(this._plot === 'N/A'){
-                return ''; 
-            }else{  
-                return this._plot; 
-            }
         }
 
     }
-    getPoster(){
-        if(this._poster === undefined){
-            return ''; 
-        }else{
-            if(this._poster === 'N/A'){
-                return ''; 
-            }else{  
-                return this._poster; 
-            }
-        }
-       
-    }
-   
-}
-
-class UserView{
-    render (model){
-
-        
-        let titulo = document.querySelector("#title")
-        titulo.innerHTML = `
-            ${model.getTitle()} 
-        ` 
-        document.body.appendChild(titulo); 
-
-
-    
-       let imagem = document.querySelector("#poster"); 
-        imagem.innerHTML = `
-            <img src=${model.getPoster()}> 
-        
-        ` 
-        document.body.appendChild( imagem ); 
-
-        let texto = document.querySelector("#descricao")
-        texto.innerHTML = `
-            ${model.getPlot()} 
-        ` 
-        document.body.appendChild(texto); 
-
-        
-      
-
-
-    }
-}
-class Controller{
-    adicionaFilme(){
-
-        let dados = new modelDocumentario(title.value)
-        dados.buscaFilme(); 
-        let view = new UserView(); 
-        view.render(dados); 
-    }
-    limpaCampos(){
-        document.getElementById('search').value = '';
-    }
     
 
-}
-
-let controller = new Controller();
-
-document.getElementById("buscar").addEventListener("click", controller.adicionaFilme)
-document.getElementById("buscar").addEventListener("click", controller.limpaCampos )
-var title = document.querySelector("#search")

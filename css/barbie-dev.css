@@ -6,7 +6,7 @@
     
 }
 #logo:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 #container{
@@ -55,4 +55,22 @@ footer{
 }
 input{
     width: 250px!important;
+}
+.filmes-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border: 5px solid gray;
+    margin-bottom: 50px;
+}
+
+#results{
+    margin-top: 50px;
+    margin-left:30%;
+    font-style: bold; 
+    color: gray; 
+}
+.titulo{
+
+    margin-left:22px;
 }
