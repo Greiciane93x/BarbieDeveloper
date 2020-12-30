@@ -32,9 +32,7 @@ botao.addEventListener('click', getFilmes)
           
                 buscaErrada.innerHTML = `  <h5 id="nao-encontrado"> Nenhum título com "${titulo}" foi encontrado. Por favor, tente novamente. </h5>`
          
-
           
-
         }else if(resposta.Response === 'True'){
 
             let container = document.getElementById('container'); 
@@ -44,7 +42,6 @@ botao.addEventListener('click', getFilmes)
 
             for(f of filmes){
                
-           
              
                 containerDeFilmes = document.createElement('div')
                 containerDeFilmes.className = 'filmes-container'
@@ -55,7 +52,6 @@ botao.addEventListener('click', getFilmes)
                               </div>`
                 containerDeFilmes.innerHTML += poster
 
-                
                 let InformacoesDiv = document.createElement('div')
                 InformacoesDiv.className = 'informacoes'
                 containerDeFilmes.appendChild(InformacoesDiv)
@@ -63,7 +59,6 @@ botao.addEventListener('click', getFilmes)
                 let titulo = `<h4 class="titulo">${f.Title}</h4>`
                 InformacoesDiv.innerHTML += titulo
 
-        
                 let anoFilme = `<small class="ano">${f.Year}<small>`
                 InformacoesDiv.innerHTML += anoFilme
                 
