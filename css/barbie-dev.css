@@ -8,27 +8,70 @@
     margin-left: -150%;
     
 }
+#logo-pequena{   
+    display:flex;
+    flex-direction: flex-start;
+    width:350px!important; 
+    height: 65px;
+    transition: 1s all;
+    margin-left: -2%!important;
+
+}
 
 @media only screen and (max-width: 600px) {
-        
+    
     #logo{
         display:flex;
         flex-direction: flex-start;
         width:350px; 
         height: 65px;
         transition: 1s all;
-        margin-left: -2%!important;
+        margin-left: -3%!important;
+        
+    }
+    
+    #logo-pequena{
+        display:flex;
+        flex-direction: flex-start;
+        width:350px!important; 
+        height: 65px;
+        transition: 1s all;
+        margin-left: -20%!important;
         
     }
     .container{
         display: flex;
         flex-direction: column;
     }
+  
+    #imagem-contato{
+        margin-top: 40px;
+        margin-left: 120px!important;
+        width: 50%!important;
+        border-radius: 200px;
+    }
+    #contatos{
+        display:flex; 
+        flex-direction: row;
+        margin-left: 170px!important;
+        margin-top: 22px;
+    
+    }
     
 
 }
 
+#imagem-contato{
+    margin-top: 40px;
+    margin-left: 75px;
+    width: 20%;
+    border-radius: 200px;
+}
+
 #logo:hover{
+    transform: scale(1.1);
+}
+#logo-pequena:hover{
     transform: scale(1.1);
 }
 
@@ -61,8 +104,6 @@ footer{
     margin-top: 22px;
     margin-bottom: 22px;
 
- 
-
 }
 
 input{
@@ -71,7 +112,6 @@ input{
 .filmes-container{
     display: flex;
     justify-content: space-between;
-    
     border: 3px solid black;
     margin-bottom: 50px;
 }
@@ -103,4 +143,24 @@ input{
 }
 .mostra{
     display: block;
+}
+#contatos{
+    display:flex; 
+    flex-direction: row;
+    margin-left: 200px;
+    margin-top: 22px;
+
+}
+#icone-instagram{
+    width: 70px;
+}
+#icone-github{
+    width: 70px;
+}
+
+#icone-instagram:hover{
+    transform: scale(1.1);
+}
+#icone-github:hover{
+    transform: scale(1.1);
 }
