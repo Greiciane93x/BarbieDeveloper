@@ -17,7 +17,23 @@
     margin-left: -2%!important;
 
 }
+#busca{
+    display:flex;
+    margin-left: 950px;
+}
+body{
+    background-color: white!important;
+}
+#apresentacao{
+    display: flex;
+    font-size:20px;
+    margin-left:600px;
+    padding:22px;
+    font-family: 'Libre Baskerville', serif;
 
+    
+    
+}
 @media only screen and (max-width: 600px) {
     
     #logo{
@@ -57,6 +73,36 @@
         margin-top: 22px;
     
     }
+    #buscar{
+        margin-top: 1px!important;
+    }
+    #busca{
+        display:flex;
+        padding: 5px;
+        margin-left: 50px;
+        justify-content: space-around;
+    }
+    #apresentacao{
+        display: flex;
+        font-size:20px;
+        margin-left:10px;
+        padding:22px;
+        font-family: 'Libre Baskerville', serif;
+    
+        
+        
+    }
+    #contato-foto{
+        margin-left:20px!important; 
+        flex-direction: column;
+    }
+    #contatos{
+        display:flex; 
+        flex-direction: row;
+        margin-left: 40px!important;
+        margin-top: 2px;
+    
+}
     
 
 }
@@ -121,19 +167,19 @@ input{
     margin-left:30%;
     font-style: bold; 
     color: black;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Libre Baskerville', serif;
 }
 .titulo{
 
     margin-left:2px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Libre Baskerville', serif;
     font-style: bold; 
     padding: 2px;
 
 }
 .ano{
     margin-left:2px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Libre Baskerville', serif;
     font-style: bold; 
 
 }
@@ -147,15 +193,25 @@ input{
 #contatos{
     display:flex; 
     flex-direction: row;
-    margin-left: 200px;
+    margin-left: 750px;
     margin-top: 22px;
-
+   
+}
+#contato-foto{
+    margin-left:700px; 
+    flex-direction: column;
 }
 #icone-instagram{
+    display: flex;
     width: 70px;
+    margin-top:-22px;
+    margin-right: 55px;;
+  
 }
 #icone-github{
-    width: 70px;
+    width: 60px;
+    margin-left:5px;
+    margin-top: -22px;
 }
 
 #icone-instagram:hover{
