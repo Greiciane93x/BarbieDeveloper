@@ -2,7 +2,7 @@
 
 Para ir à página inicial é necessário acessar __https://greiciane93x.github.io/BarbieDeveloper/html/index.html__ 
 
-Ao clicar na aba "Documentários" você poderá acessar o documentário de sua preferência através da 
+Ao clicar na aba "Documentários" você poderá acessar ao documentário de sua preferência através da 
 
 requisição da _api OMDB_.
 
