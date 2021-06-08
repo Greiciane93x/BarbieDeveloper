@@ -1,4 +1,4 @@
-# BarbieDeveloper 
+# Projeto feito por Ane - [BarbieDeveloper]
 
 Para ir à página inicial é necessário acessar __https://greiciane93x.github.io/BarbieDeveloper/html/index.html__ 
 
